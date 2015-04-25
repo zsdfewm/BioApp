@@ -1,0 +1,5 @@
+tempdata:
+  string indexA; indexed
+  string indexB; indexed
+  int other_pro1; not indexed;
+  string other_pro2; not index;

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+  <body>
+    <form action="/SearchA?dataset_name={{dataset_name}}" method="get">
+      first_name: <input type="text" name="first_name" value="">
+      <input type="submit" value="Submit">
+    </form>
+    <table border="1" style="width:100%">
+      <tr>
+        <td>
+          First
+        </td>
+        <td>
+          Last
+        </td>
+        <td>
+          Phone
+        </td>
+      </tr>
+    {% for person in people %}
+      <tr>
+        <td>
+          {{person.first_name}}
+        </td>
+        <td>
+          {{person.last_name}}
+        </td>
+        <td>
+          {{person.phone}}
+        </td>
+      </tr>
+    {% endfor %}
+    </table>
+    <form action="/sign?dataset_name={{dataset_name}}" method="post">
+      <div>ID: <input type="number" name="id" cols="60">
+      <div>First name: <input type="text" name="first_name" cols="60"></div>
+      <div>Last name: <input type="text" name="last_name" cols="60"></div>
+      <div>Phone: <input type="text" name="phone" cols="60"></div>
+      <div><input type="submit" value="submit data"></div>
+    </form>
+  </body>
+</html>
+{% endautoescape %}
